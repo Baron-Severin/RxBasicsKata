@@ -1,5 +1,6 @@
 package com.macys.rxkataandroid;
 
+import io.reactivex.Maybe;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 import java.util.List;
@@ -29,11 +30,11 @@ interface CountriesService {
     Observable<Country> listPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty(
             FutureTask<List<Country>> countriesFromNetwork);
 
-    Observable<String> getCurrencyUsdIfNotFound(String countryName, List<Country> countries);
+    Single<String> getCurrencyUsdIfNotFound(String countryName, List<Country> countries);
 
-    Observable<Long> sumPopulationOfCountries(List<Country> countries);
+    Maybe<Long> sumPopulationOfCountries(List<Country> countries);
 
-    Observable<Long> sumPopulationOfCountries(Observable<Country> countryObservable1,
+    Maybe<Long> sumPopulationOfCountries(Observable<Country> countryObservable1,
             Observable<Country> countryObservable2);
 
     Single<Map<String, Long>> mapCountriesToNamePopulation(List<Country> countries);

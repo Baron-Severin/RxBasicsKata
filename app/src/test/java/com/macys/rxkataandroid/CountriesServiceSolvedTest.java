@@ -32,7 +32,7 @@ public class CountriesServiceSolvedTest {
     @Test
     public void rx_CountryNameInCapitals() {
         Country testCountry = CountriesTestProvider.countries().get(0);
-        String expected = testCountry.name.toUpperCase(Locale.US);
+        String expected = testCountry.getName().toUpperCase(Locale.US);
         TestObserver<String> testObserver = countriesService
                 .countryNameInCapitals(testCountry)
                 .test();
@@ -182,7 +182,7 @@ public class CountriesServiceSolvedTest {
         TestObserver<Map<String, Long>> values = countriesService.mapCountriesToNamePopulation(allCountries).test();
         Map<String, Long> expected = new HashMap<>();
         for (Country country : allCountries) {
-            expected.put(country.name, country.population);
+            expected.put(country.getName(), country.getPopulation());
         }
         values.assertResult(expected);
         values.assertNoErrors();

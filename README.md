@@ -4,7 +4,7 @@ A set of simple code challenges to learn RxJava using JUnit tests as an acceptan
 
 ## Current implementation
 ### Dependencies:
-- RxJava 2.0.5 
+- RxJava 2.1.8 
 - JUnit 4.12
 
 ### Reactive types covered:

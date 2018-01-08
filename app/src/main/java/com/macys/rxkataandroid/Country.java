@@ -2,9 +2,9 @@ package com.macys.rxkataandroid;
 
 
 class Country {
-    final String name;
-    final String currency;
-    final long population;
+    private final String name;
+    private final String currency;
+    private final long population;
 
     Country(String name, String currency, long population) {
         this.name = name;
