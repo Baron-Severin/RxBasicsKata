@@ -35,7 +35,7 @@ final class CountriesTestProvider {
     static List<Country> countriesPopulationMoreThanOneMillion() {
         List<Country> result = new ArrayList<>();
         for (Country country : countries) {
-            if (country.population > 1000000) {
+            if (country.getPopulation() > 1000000) {
                 result.add(country);
             }
         }
@@ -46,7 +46,7 @@ final class CountriesTestProvider {
     static List<Long> populationOfCountries() {
         List<Long> result = new ArrayList<>(countries.size());
         for (Country country : countries) {
-            result.add(country.population);
+            result.add(country.getPopulation());
         }
         return result;
     }
@@ -54,7 +54,7 @@ final class CountriesTestProvider {
     static List<String> namesOfCountries() {
         List<String> result = new ArrayList<>(countries.size());
         for (Country country : countries) {
-            result.add(country.name);
+            result.add(country.getName());
         }
         return result;
     }
@@ -62,7 +62,7 @@ final class CountriesTestProvider {
     static Long sumPopulationOfAllCountries() {
         Long result = 0L;
         for (Country country : countries) {
-            result += country.population;
+            result += country.getPopulation();
         }
         return result;
     }
